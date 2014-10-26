@@ -25,6 +25,7 @@ RUN useradd \
 
 RUN echo '%wheel ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers
 
+WORKDIR /builder
 ENTRYPOINT [ "/bin/bash" ]
 USER builder
 ENV HOME /builder
