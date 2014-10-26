@@ -30,7 +30,4 @@ ENTRYPOINT [ "/bin/bash" ]
 USER builder
 ENV HOME /builder
 
-RUN mkdir -p repos
-RUN git clone --bare --mirror git://git.yoctoproject.org/poky repos/poky.git
-
 CMD [ "-l" ]
