@@ -6,6 +6,6 @@ RUN git clone --single-branch --branch daisy --reference repos/poky.git git://gi
 
 WORKDIR /builder/poky
 
-ENTRYPOINT [ "/bin/bash", "-x", "-c", "env; source oe-init-build-env; exec bitbake $@", "--" ]
+ENTRYPOINT [ "/bin/bash", "-x", "-c", "env; run_args=\"$@\"; shift $#; source oe-init-build-env; exec bitbake ${run_args}", "--" ]
 
 CMD [ "core-image-minimal" ]
